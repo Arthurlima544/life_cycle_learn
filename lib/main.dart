@@ -1,6 +1,10 @@
 import 'package:flutter/material.dart';
+import 'package:life_cycle_learn/life_cycle_observer.dart';
 
 void main() {
+  WidgetsFlutterBinding.ensureInitialized();
+  final lifeCycle = LifeCycleObserver();
+  WidgetsBinding.instance.addObserver(lifeCycle.appLifecycleListener);
   runApp(const MainApp());
 }
 
